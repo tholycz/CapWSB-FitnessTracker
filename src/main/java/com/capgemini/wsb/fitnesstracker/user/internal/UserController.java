@@ -115,7 +115,7 @@ class UserController {
      * @param emailData data with the new email address.
      * @return The updated user, or 404 if the user is not found.
      */
-    @PutMapping("/users/{id}/email")
+    @PutMapping("/{id}/email")
     public ResponseEntity<UserDto> updateUserEmail(@PathVariable Long id, @RequestBody UserEmailInfo emailData) {
         Optional<User> updatedUser = userService.updateUserEmail(id, emailData.email());
         if (updatedUser.isPresent()) {
