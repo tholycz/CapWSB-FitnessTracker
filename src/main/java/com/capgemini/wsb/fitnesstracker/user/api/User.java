@@ -2,13 +2,13 @@ package com.capgemini.wsb.fitnesstracker.user.api;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 
+/**
+ * Entity representing a user in the system.
+ */
 @Entity
 @Table(name = "users")
 @Getter
@@ -30,9 +30,18 @@ public class User {
     @Column(name = "birthdate", nullable = false)
     private LocalDate birthdate;
 
+    @Setter
     @Column(nullable = false, unique = true)
     private String email;
 
+    /**
+     * Constructor initializing a User object.
+     *
+     * @param firstName First name of the user.
+     * @param lastName  Last name of the user.
+     * @param birthdate Birthdate of the user.
+     * @param email     Email address of the user.
+     */
     public User(
             final String firstName,
             final String lastName,
