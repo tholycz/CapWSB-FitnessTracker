@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "b7b9cec9-5191-44ab-a0e6-b3c92c8827aa",
+		"name": "Trainings",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "all trainings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/trainings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"trainings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create training",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"user\": {\r\n            \"id\": 2\r\n        },\r\n        \"startTime\": \"2017-03-05T14:30:00.000+00:00\",\r\n        \"endTime\": \"2017-03-05T16:30:00.000+00:00\",\r\n        \"activityType\": \"TENNIS\",\r\n        \"distance\": 10.0,\r\n        \"averageSpeed\": 12.0\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/trainings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"trainings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "trainings by user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/trainings/user/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"trainings",
+						"user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Completed after date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/trainings/completed?date=2017-03-04",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"trainings",
+						"completed"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2017-03-04"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "trainings by activity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/trainings/activity?activityType=TENNIS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"trainings",
+						"activity"
+					],
+					"query": [
+						{
+							"key": "activityType",
+							"value": "TENNIS"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update distance",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"distance\": 15.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/trainings/1/distance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"trainings",
+						"1",
+						"distance"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
